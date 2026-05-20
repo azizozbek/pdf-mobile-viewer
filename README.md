@@ -25,5 +25,9 @@ Typical devices:
 It returns:
 - true → touch-oriented device
 - false → mouse/trackpad precision pointer
-
+    
 You can set the breakpoint in the pdf-mobile-viewer.js:12. Default: 1024px
+
+## How to use?
+
+Download as zip file and upload in your plugin folder. 
