@@ -1,0 +1,89 @@
+/* ─── PDF Mobile Viewer ─────────────────────────────────────────────────── */
+
+.pmv-viewer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #f4f4f5;
+  margin-bottom: 0.75rem;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Toolbar */
+.pmv-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: #1e1e2e;
+  color: #fff;
+}
+
+.pmv-page-info {
+  flex: 1;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #c9d1d9;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.pmv-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+  flex-shrink: 0;
+}
+
+.pmv-btn:hover,
+.pmv-btn:focus-visible {
+  background: rgba(255, 255, 255, 0.22);
+  outline: none;
+}
+
+.pmv-btn:active {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.pmv-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Canvas scroll area */
+.pmv-canvas-wrap {
+  overflow-x: auto;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: 80vh;
+  /* flex-start so the canvas can grow wider than the container and scroll */
+  display: flex;
+  justify-content: flex-start;
+  background: #525659;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.pmv-canvas {
+  display: block;
+  /* NO max-width / height: auto — those override the zoom by scaling the
+     canvas element back down to fit, making zoom appear broken.
+     The canvas renders at its natural pixel size; canvasWrap scrolls. */
+  flex-shrink: 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+  background: #fff;
+}
